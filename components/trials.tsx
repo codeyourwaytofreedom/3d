@@ -11,7 +11,7 @@ const Trials = () => {
         const group = useRef()
         const { nodes, materials } = useGLTF('shoe.gltf')
         return (
-          <group ref={group} {...props} dispose={null}>
+          <group ref={group} {...props} dispose={null} scale={3}>
             <mesh geometry={nodes.shoe.geometry} material={materials.laces} />
             <mesh geometry={nodes.shoe_1.geometry} material={materials.mesh} />
             <mesh geometry={nodes.shoe_2.geometry} material={materials.caps} />
@@ -25,12 +25,12 @@ const Trials = () => {
       }
     return ( 
         <div className={t.trials}>
-            
-                <Canvas >
-                <Suspense fallback={null}>
+            <div className={t.trials_canvas}>
+                <Canvas className={t.canvas} >
+                    <Suspense fallback={null}>
                     <ambientLight intensity={0.1} />
                     <Model/>
-                    <directionalLight color="red" position={[-2, 0, 5]} />
+                    <directionalLight color="green" position={[-2, 0, 5]} />
 
                     {/* <mesh visible userData={{ hello: 'world' }} rotation={[Math.PI / 2, 0, 0]}>
                     <sphereGeometry args={[1, 16, 16]} />
@@ -38,6 +38,8 @@ const Trials = () => {
                     </mesh> */}
                     </Suspense>
                 </Canvas>
+            </div>
+               
             
         </div>
      );
