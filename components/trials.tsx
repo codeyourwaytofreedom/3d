@@ -5,13 +5,24 @@ import drop from "../public/drop.png";
 import { useRef } from "react";
 import * as THREE from 'three'
 import { useGLTF, AccumulativeShadows, RandomizedLight, OrbitControls, PivotControls, MeshTransmissionMaterial, Center, Environment, useTexture } from '@react-three/drei';
-//import Model from "../public/Shoe.js";
-import Model from "../public/Model.jsx";
+import Model from "../public/Shoe.js";
+//import Model from "../public/Model.jsx";
 import { useFrame } from "@react-three/fiber";
 import { useState } from "react";
 import Test from "../public/test.js";
+import { Geometry, Base, Addition, Subtraction } from '@react-three/csg'
+
+
 const Trials = () => {    
-    
+    const boxGeometry = new THREE.BoxGeometry()
+    function CrossGeometry() {
+    return (
+        <Geometry>
+        <Base geometry={boxGeometry} scale={[2, 0.5, 0.5]} />
+        <Addition geometry={boxGeometry} scale={[0.5, 2, 0.5]} />
+        </Geometry>
+    )
+    }
     return (         
         <div className={t.trials}>
             <div className={t.trials_canvas}>
@@ -19,8 +30,12 @@ const Trials = () => {
                 
                     <Suspense fallback={null}>
                         <ambientLight intensity={0.1} />
-                        {/* <Model/> */}
+                        <Model/>
                         <Test/>
+                        <mesh>
+                            <CrossGeometry/>
+                        </mesh>
+                        
                         
                         <spotLight intensity={0.5} angle={0.9} penumbra={1} position={[10,15,10]} castShadow/>
                         <OrbitControls 
