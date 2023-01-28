@@ -1,11 +1,11 @@
 .trials {
-  border: 4px solid black;
   height: 100vh;
-  display: grid;
-  justify-content: center;
+  display: flex;
   align-items: center;
+  background-color: wheat;
 }
 .trials_canvas {
   width: 500px;
   height: 500px;
+  background-color: red;
 }/*# sourceMappingURL=trials.module.css.map */
