@@ -1,9 +1,16 @@
 
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
-
+import { useEffect } from 'react';
 export default function Model({ ...props }) {
   const group = useRef()
+  
+  const [rotation, setRotation] = useState()
+  useEffect(() => {
+    setRotation({x:group.current.rotation.x, y:group.current.rotation.y, z:group.current.rotation.z})
+    group.current.rotation.z = 20;
+  }, []);
+
   const { nodes, materials } = useGLTF('/shoe.gltf')
   return (
     <group ref={group} {...props} dispose={null} scale={3}>
