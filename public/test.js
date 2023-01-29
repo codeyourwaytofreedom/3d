@@ -18,7 +18,6 @@ const Test = () => {
     return ( 
             <mesh>
                 <sphereGeometry args={[1, 32, 32]} />
-                <CrossGeometry />
                 <meshStandardMaterial map={texture}/>
             </mesh>
      );
