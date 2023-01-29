@@ -11,7 +11,7 @@ import { useFrame } from "@react-three/fiber";
 import { useState } from "react";
 import Test from "../public/test.js";
 import { Geometry, Base, Addition, Subtraction } from '@react-three/csg'
-
+import Text from "../public/Text.jsx";
 
 const Trials = () => {    
     const boxGeometry = new THREE.BoxGeometry()
@@ -31,12 +31,12 @@ const Trials = () => {
                 <Canvas className={t.canvas}>
                     <Suspense fallback={null}>
                         <ambientLight intensity={0.3} />
-                        <Test/>
+                        {/* <Test/> */}
                         {/* <mesh scale={3} onPointerDown={(event)=> event.stopPropagation()}>
                             <sphereGeometry args={[1, 32, 32]} />
                             <meshStandardMaterial color={active_color}/>
                         </mesh> */}
-                        <mesh  position={[0,0,3.4]} rotation={[0,0,0.8]} scale={1} onPointerDown={()=> setActive("skyblue")}>
+{/*                         <mesh  position={[0,0,3.4]} rotation={[0,0,0.8]} scale={1} onPointerDown={()=> setActive("skyblue")}>
                             <CrossGeometry />
                             <meshStandardMaterial color="skyblue" />
                         </mesh>    
@@ -67,8 +67,8 @@ const Trials = () => {
                         <mesh position={[-2.2,0,2.5]} rotation={[0,-0.8,0.8]} scale={1} onPointerDown={()=> setActive("darkgreen")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="darkgreen" />
-                        </mesh> 
-
+                        </mesh>  */}
+                        <Text/>
 
                         
                         <spotLight intensity={0.5} angle={0.9} penumbra={1} position={[10,15,10]} castShadow/>
