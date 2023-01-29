@@ -37,27 +37,31 @@ const Trials = () => {
                             <CrossGeometry/>
                             <meshStandardMaterial color="skyblue" />
                         </mesh>    
-                        <mesh position={[0,0,-3.2]} rotation={[0,0,0.8]} scale={1}>
+                        <mesh position={[0,0,-3.2]} rotation={[0,0,0.8]} scale={1} onClick={()=> setActive("red")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="red" />
                         </mesh>  
-                        <mesh position={[-2,0,-2.5]} rotation={[0,0.7,0.8]} scale={1}>
+                        <mesh position={[-2,0,-2.5]} rotation={[0,0.7,0.8]} scale={1} onClick={()=> setActive("purple")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="purple" />
                         </mesh>      
-                        <mesh position={[2.5,0,-1.95]} rotation={[0,-0.9,0.8]} scale={1}>
+                        <mesh position={[2.1,0,-2.35]} rotation={[0,-0.7,0.8]} scale={1} onClick={()=> setActive("black")}>
                             <CrossGeometry/>
-                            <meshStandardMaterial color="Black" />
+                            <meshStandardMaterial color="black" />
                         </mesh>          
-                        <mesh position={[2.5,0,1.9]} rotation={[0,0.9,0.8]} scale={1}>
+                        <mesh position={[2.1,0,2.3]} rotation={[0,0.8,0.8]} scale={1} onClick={()=> setActive("gold")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="gold" />
                         </mesh>    
-                        <mesh position={[3.6,0,0]} rotation={[0,1.5,0.8]} scale={1}>
+                        <mesh position={[3.2,0,0]} rotation={[0,1.6,0.8]} scale={1} onClick={()=> setActive("blue")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="blue" />
                         </mesh>    
-                        <mesh position={[-2.5,0,1.95]} rotation={[0,-0.8,0.8]} scale={1}>
+                        <mesh position={[-3.2,0,0]} rotation={[0,1.6,0.8]} scale={1} onClick={()=> setActive("white")}>
+                            <CrossGeometry/>
+                            <meshStandardMaterial color="white" />
+                        </mesh> 
+                        <mesh position={[-2.2,0,2.3]} rotation={[0,-0.8,0.8]} scale={1} onClick={()=> setActive("darkgreen")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="darkgreen" />
                         </mesh> 
@@ -70,8 +74,8 @@ const Trials = () => {
                             maxDistance={15} 
                             minDistance={10}  
                             /* target={[2,0,0]}  */
-                            minPolarAngle={Math.PI/2}
-                            maxPolarAngle={Math.PI/2} 
+/*                             minPolarAngle={Math.PI/2}
+                            maxPolarAngle={Math.PI/2}  */
                         />
                     </Suspense>
                 </Canvas>
