@@ -16,7 +16,7 @@ function CrossGeometry() {
 const Test = () => {
     const texture = useTexture('bricks.jpeg')
     return ( 
-            <mesh>
+            <mesh scale={3}>
                 <sphereGeometry args={[1, 32, 32]} />
                 <meshStandardMaterial map={texture}/>
             </mesh>
