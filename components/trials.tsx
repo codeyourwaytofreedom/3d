@@ -25,47 +25,46 @@ const Trials = () => {
     }
     const [active_color, setActive] = useState(null)
     return (         
-        <div className={t.trials}>
+        <div className={t.trials} /* style={{backgroundColor:active_color}} */>
             <div className={t.trials_canvas}>
                 <h1>Active Color is : {active_color}</h1>
                 <Canvas className={t.canvas}>
-                
                     <Suspense fallback={null}>
                         <ambientLight intensity={0.3} />
-                       {/*  <Test/> */}
-                        <mesh scale={2} onPointerDown={(event)=> event.stopPropagation()}>
+                        <Test/>
+                        {/* <mesh scale={3} onPointerDown={(event)=> event.stopPropagation()}>
                             <sphereGeometry args={[1, 32, 32]} />
-                            <meshStandardMaterial color="silver"/>
-                        </mesh>
-                        <mesh  position={[0,0,3.2]} rotation={[0,0,0.8]} scale={1} onPointerDown={()=> setActive("skyblue")}>
+                            <meshStandardMaterial color={active_color}/>
+                        </mesh> */}
+                        <mesh  position={[0,0,3.4]} rotation={[0,0,0.8]} scale={1} onPointerDown={()=> setActive("skyblue")}>
                             <CrossGeometry />
                             <meshStandardMaterial color="skyblue" />
                         </mesh>    
-                        <mesh position={[0,0,-3.2]} rotation={[0,0,0.8]} scale={1} onPointerDown={()=> setActive("red")}>
+                        <mesh position={[0,0,-3.4]} rotation={[0,0,0.8]} scale={1} onPointerDown={()=> setActive("red")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="red" />
                         </mesh>  
-                        <mesh position={[-2,0,-2.5]} rotation={[0,0.7,0.8]} scale={1} onPointerDown={()=> setActive("purple")}>
+                        <mesh position={[-2,0,-2.7]} rotation={[0,0.7,0.8]} scale={1} onPointerDown={()=> setActive("purple")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="purple" />
                         </mesh>      
-                        <mesh position={[2.1,0,-2.35]} rotation={[0,-0.7,0.8]} scale={1} onPointerDown={()=> setActive("black")}>
+                        <mesh position={[2.1,0,-2.55]} rotation={[0,-0.7,0.8]} scale={1} onPointerDown={()=> setActive("black")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="black" />
                         </mesh>          
-                        <mesh position={[2.1,0,2.3]} rotation={[0,0.8,0.8]} scale={1} onPointerDown={()=> setActive("gold")}>
+                        <mesh position={[2.1,0,2.5]} rotation={[0,0.8,0.8]} scale={1} onPointerDown={()=> setActive("gold")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="gold" />
                         </mesh>    
-                        <mesh position={[3.2,0,0]} rotation={[0,1.6,0.8]} scale={1} onPointerDown={()=> setActive("blue")}>
+                        <mesh position={[3.2,0,0.2]} rotation={[0,1.6,0.8]} scale={1} onPointerDown={()=> setActive("blue")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="blue" />
                         </mesh>    
-                        <mesh position={[-3.2,0,0]} rotation={[0,1.6,0.8]} scale={1} onPointerDown={()=> setActive("white")}>
+                        <mesh position={[-3.2,0,0.2]} rotation={[0,1.6,0.8]} scale={1} onPointerDown={()=> setActive("white")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="white" />
                         </mesh> 
-                        <mesh position={[-2.2,0,2.3]} rotation={[0,-0.8,0.8]} scale={1} onPointerDown={()=> setActive("darkgreen")}>
+                        <mesh position={[-2.2,0,2.5]} rotation={[0,-0.8,0.8]} scale={1} onPointerDown={()=> setActive("darkgreen")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="darkgreen" />
                         </mesh> 
@@ -78,8 +77,8 @@ const Trials = () => {
                             maxDistance={15} 
                             minDistance={10}  
                             /* target={[2,0,0]}  */
-                            /* minPolarAngle={Math.PI/2}
-                            maxPolarAngle={Math.PI/2}  */
+                            minPolarAngle={Math.PI/2}
+                            maxPolarAngle={Math.PI/2} 
                         />
                     </Suspense>
                 </Canvas>
