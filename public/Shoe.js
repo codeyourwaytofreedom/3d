@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
-export default function Model({ ...props }) {
+export default function Shoe({ ...props }) {
   const group = useRef()
   
   const [rotation, setRotation] = useState()

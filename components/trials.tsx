@@ -5,7 +5,7 @@ import drop from "../public/drop.png";
 import { useRef } from "react";
 import * as THREE from 'three'
 import { useGLTF, AccumulativeShadows, RandomizedLight, OrbitControls, PivotControls, MeshTransmissionMaterial, Center, Environment, useTexture } from '@react-three/drei';
-import Model from "../public/Shoe.js";
+import Shoe from "../public/Shoe.js";
 //import Model from "../public/Model.jsx";
 import { useFrame } from "@react-three/fiber";
 import { useState } from "react";
@@ -23,23 +23,46 @@ const Trials = () => {
         </Geometry>
     )
     }
+    const [active_color, setActive] = useState(null)
     return (         
         <div className={t.trials}>
             <div className={t.trials_canvas}>
+                <h1>Active Color is : {active_color}</h1>
                 <Canvas className={t.canvas}>
                 
                     <Suspense fallback={null}>
                         <ambientLight intensity={0.3} />
-                        {/* <Model/> */}
                         <Test/>
-                        <mesh position={[0,0,3]} rotation={[0,0,0.8]} scale={1}>
+                        <mesh position={[0,0,3.2]} rotation={[0,0,0.8]} scale={1} onClick={()=> setActive("skyblue")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="skyblue" />
                         </mesh>    
-                        <mesh position={[0,0,-3]} rotation={[0,0,0.8]} scale={1}>
+                        <mesh position={[0,0,-3.2]} rotation={[0,0,0.8]} scale={1}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="red" />
-                        </mesh>                     
+                        </mesh>  
+                        <mesh position={[-2,0,-2.5]} rotation={[0,0.7,0.8]} scale={1}>
+                            <CrossGeometry/>
+                            <meshStandardMaterial color="purple" />
+                        </mesh>      
+                        <mesh position={[2.5,0,-1.95]} rotation={[0,-0.9,0.8]} scale={1}>
+                            <CrossGeometry/>
+                            <meshStandardMaterial color="Black" />
+                        </mesh>          
+                        <mesh position={[2.5,0,1.9]} rotation={[0,0.9,0.8]} scale={1}>
+                            <CrossGeometry/>
+                            <meshStandardMaterial color="gold" />
+                        </mesh>    
+                        <mesh position={[3.6,0,0]} rotation={[0,1.5,0.8]} scale={1}>
+                            <CrossGeometry/>
+                            <meshStandardMaterial color="blue" />
+                        </mesh>    
+                        <mesh position={[-2.5,0,1.95]} rotation={[0,-0.8,0.8]} scale={1}>
+                            <CrossGeometry/>
+                            <meshStandardMaterial color="darkgreen" />
+                        </mesh> 
+
+
                         
                         <spotLight intensity={0.5} angle={0.9} penumbra={1} position={[10,15,10]} castShadow/>
                         <OrbitControls 
