@@ -9,7 +9,7 @@ import Shoe from "../public/Shoe.js";
 //import Model from "../public/Model.jsx";
 import { useFrame } from "@react-three/fiber";
 import { useState } from "react";
-import Test from "../public/test.js";
+import Ball from "../public/ball.js";
 import { Geometry, Base, Addition, Subtraction } from '@react-three/csg'
 import Text from "../public/Text.jsx";
 
@@ -23,15 +23,15 @@ const Trials = () => {
         </Geometry>
     )
     }
-    const [active_color, setActive] = useState(null)
+    const [active_color, setActive] = useState("orange")
     return (         
         <div className={t.trials} /* style={{backgroundColor:active_color}} */>
             <div className={t.trials_canvas}>
                 <Canvas>
                     <Suspense fallback={null}>
                         <ambientLight intensity={0.3} />
-                        <Test/>
-                        <group dispose={null} position = {[0,0,0]} rotation={[0,3,0]}>
+                        <Ball/>
+                        <group dispose={null} position = {[0,-2.7,0]} rotation={[0,0,0]}>
                         <mesh  position={[0,0,3.4]} rotation={[0,0,0.8]} scale={1} onPointerDown={()=> setActive("skyblue")}>
                             <CrossGeometry />
                             <meshStandardMaterial color="skyblue" />
@@ -81,15 +81,14 @@ const Trials = () => {
                         <Canvas >
                             <Suspense fallback={null}>
                                 <ambientLight intensity={0.3} />
-                                <Text clr={"red"}/>
+                                <Text clr={active_color}/>
                                 <spotLight intensity={0.5} angle={0.9} penumbra={1} position={[10,15,10]} castShadow/>
                                 <OrbitControls 
                                     enablePan={true} 
                                     maxDistance={15} 
                                     minDistance={10}  
-                                    /* target={[2,0,0]}  */
-                                /*  minPolarAngle={Math.PI/2}
-                                    maxPolarAngle={Math.PI/2}  */
+                                    minPolarAngle={Math.PI/2}
+                                    maxPolarAngle={Math.PI/2} 
                                 />
                             </Suspense>
                         </Canvas>

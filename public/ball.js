@@ -4,14 +4,14 @@ import * as THREE from 'three'
 import { Geometry, Base, Addition, Subtraction } from '@react-three/csg'
 
 
-const Test = () => {
+const Ball = () => {
     const texture = useTexture('aa.jpeg')
     return ( 
-            <mesh scale={3} onPointerDown={(event)=> event.stopPropagation()} >
+            <mesh scale={3.7} onPointerDown={(event)=> event.stopPropagation()} position={[0,2.5,0]} >
                 <sphereGeometry args={[1, 32, 32]} />
                 <meshStandardMaterial map={texture}/>
             </mesh>
      );
 }
  
-export default Test;
+export default Ball;
