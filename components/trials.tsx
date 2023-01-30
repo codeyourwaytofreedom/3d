@@ -27,16 +27,12 @@ const Trials = () => {
     return (         
         <div className={t.trials} /* style={{backgroundColor:active_color}} */>
             <div className={t.trials_canvas}>
-                <h1>Active Color is : {active_color}</h1>
-                <Canvas className={t.canvas}>
+                <Canvas>
                     <Suspense fallback={null}>
                         <ambientLight intensity={0.3} />
-                        {/* <Test/> */}
-                        {/* <mesh scale={3} onPointerDown={(event)=> event.stopPropagation()}>
-                            <sphereGeometry args={[1, 32, 32]} />
-                            <meshStandardMaterial color={active_color}/>
-                        </mesh> */}
-{/*                         <mesh  position={[0,0,3.4]} rotation={[0,0,0.8]} scale={1} onPointerDown={()=> setActive("skyblue")}>
+                        <Test/>
+                        <group dispose={null} position = {[0,0,0]} rotation={[0,3,0]}>
+                        <mesh  position={[0,0,3.4]} rotation={[0,0,0.8]} scale={1} onPointerDown={()=> setActive("skyblue")}>
                             <CrossGeometry />
                             <meshStandardMaterial color="skyblue" />
                         </mesh>    
@@ -67,13 +63,11 @@ const Trials = () => {
                         <mesh position={[-2.2,0,2.5]} rotation={[0,-0.8,0.8]} scale={1} onPointerDown={()=> setActive("darkgreen")}>
                             <CrossGeometry/>
                             <meshStandardMaterial color="darkgreen" />
-                        </mesh>  */}
-                        <Text/>
-
-                        
+                        </mesh>
+                        </group>                         
                         <spotLight intensity={0.5} angle={0.9} penumbra={1} position={[10,15,10]} castShadow/>
                         <OrbitControls 
-                            enablePan={true} 
+                            enablePan={false} 
                             maxDistance={15} 
                             minDistance={10}  
                             /* target={[2,0,0]}  */
@@ -83,6 +77,23 @@ const Trials = () => {
                     </Suspense>
                 </Canvas>
             </div>
+            <div className={t.trials_canvas2}>
+                        <Canvas >
+                            <Suspense fallback={null}>
+                                <ambientLight intensity={0.3} />
+                                <Text clr={"red"}/>
+                                <spotLight intensity={0.5} angle={0.9} penumbra={1} position={[10,15,10]} castShadow/>
+                                <OrbitControls 
+                                    enablePan={true} 
+                                    maxDistance={15} 
+                                    minDistance={10}  
+                                    /* target={[2,0,0]}  */
+                                /*  minPolarAngle={Math.PI/2}
+                                    maxPolarAngle={Math.PI/2}  */
+                                />
+                            </Suspense>
+                        </Canvas>
+                </div>
         </div>
      );
 }
