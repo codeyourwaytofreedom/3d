@@ -56,9 +56,9 @@ const Trials = () => {
                             <CrossGeometry/>
                             <meshStandardMaterial color="blue" />
                         </mesh>    
-                        <mesh position={[-3.2,0,0.2]} rotation={[0,1.6,0.8]} scale={1} onPointerDown={()=> setActive("white")}>
+                        <mesh position={[-3.2,0,0.2]} rotation={[0,1.6,0.8]} scale={1} onPointerDown={()=> setActive("orange")}>
                             <CrossGeometry/>
-                            <meshStandardMaterial color="white" />
+                            <meshStandardMaterial color="orange" />
                         </mesh> 
                         <mesh position={[-2.2,0,2.5]} rotation={[0,-0.8,0.8]} scale={1} onPointerDown={()=> setActive("darkgreen")}>
                             <CrossGeometry/>

@@ -50,7 +50,49 @@ const Text = ({clr}) => {
         <meshStandardMaterial color={clr}/>
       </mesh>
 
+      <mesh geometry={nodes['3D_Text_-_F'].geometry} position={[0.5, 2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_r'].geometry} material={materials['Floral Scent']} position={[step*1.3, 2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_e_2'].geometry} material={materials['Floral Scent']} position={[2*step, 2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_e_2'].geometry} material={materials['Floral Scent']} position={[3*step, 2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_d_1'].geometry} material={materials['Floral Scent']} position={[4*step, 2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_o'].geometry} material={materials['Floral Scent']} position={[5*step, 2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_m'].geometry} material={materials['Floral Scent']} position={[6*step, 2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
 
+      <mesh geometry={nodes['3D_Text_-_F'].geometry} position={[0.5, -2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_r'].geometry} material={materials['Floral Scent']} position={[step*1.3, -2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_e_2'].geometry} material={materials['Floral Scent']} position={[2*step, -2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_e_2'].geometry} material={materials['Floral Scent']} position={[3*step, -2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_d_1'].geometry} material={materials['Floral Scent']} position={[4*step, -2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_o'].geometry} material={materials['Floral Scent']} position={[5*step, -2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
+      <mesh geometry={nodes['3D_Text_-_m'].geometry} material={materials['Floral Scent']} position={[6*step, -2, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={size}>
+        <meshStandardMaterial color={clr}/>
+      </mesh>
     </group>
   )
 }
